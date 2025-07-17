@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loan & Insurance Assistant</title>
+  <meta charset="UTF-8">
+  <title>Neuronest AI Bot</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6fc;
-      color: #333;
+      background: #f4f4f4;
       text-align: center;
-      padding: 50px;
+      padding-top: 100px;
     }
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
-      color: #1e3a8a;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    button {
-      background-color: #1e3a8a;
+
+    .launch-btn {
+      background-color: #4CAF50;
       color: white;
-      padding: 14px 30px;
       font-size: 18px;
+      padding: 15px 30px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
     }
-    button:hover {
-      background-color: #374fc0;
+
+    .chat-frame {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 370px;
+      height: 550px;
+      border: none;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      z-index: 9999;
+    }
+
+    .close-btn {
+      position: fixed;
+      bottom: 640px;
+      right: 20px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+      z-index: 10000;
     }
   </style>
 </head>
 <body>
 
-  <h1>💰 Smart Loan & Insurance Assistant</h1>
-  <p>Need help choosing the best loan or insurance plan?<br> Chat with our smart assistant now! 💬</p>
-  <button onclick="window.botpressWebChat.toggle()">💬 Launch Chat</button>
+  <h1>Welcome to Neuronest AI 🤖</h1>
+  <button class="launch-btn" onclick="openChat()">💬 Launch Chat</button>
 
-  <!-- Botpress Webchat Embed -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <iframe id="botFrame" class="chat-frame" src=""></iframe>
+  <button id="closeBtn" class="close-btn" onclick="closeChat()">×</button>
+
   <script>
-    window.botpressWebChat.init({
-      composerPlaceholder: "Ask me anything about loans or insurance 🧾💸",
-      botId: "2gb61l2m",
-      hostUrl: "https://cdn.botpress.cloud/webchat/v3.0",
-      messagingUrl: "https://messaging.botpress.cloud",
-      clientId: "2gb61l2m",
-      lazyLoad: true,
-      botName: "Loan & Insurance Assistant 🤖",
-      avatarUrl: "https://cdn-icons-png.flaticon.com/512/11555/11555592.png",
-      stylesheet: "https://cdn.botpress.cloud/webchat/v3.0/themes/default.min.css",
-      enableConversationDeletion: false,
-      showPoweredBy: false,
-      themeName: "prism",
-      theme: "prism",
-      backgroundColor: "#ffffff",
-      textColorOnDark: "#000000",
-      layoutWidth: "400px",
-      layoutHeight: "600px",
-      enableReset: true
-    });
+    const botURL = "https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/15/15/20250715155242-2GB61L2M.json";
+
+    function openChat() {
+      const frame = document.getElementById('botFrame');
+      const closeBtn = document.getElementById('closeBtn');
+      frame.src = botURL;
+      frame.style.display = 'block';
+      closeBtn.style.display = 'block';
+    }
+
+    function closeChat() {
+      const frame = document.getElementById('botFrame');
+      const closeBtn = document.getElementById('closeBtn');
+      frame.style.display = 'none';
+      frame.src = "";  // Stop the bot
+      closeBtn.style.display = 'none';
+    }
   </script>
 
 </body>
 </html>
 
+  
