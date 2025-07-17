@@ -4,29 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Neuronest AI Chatbot</title>
-</head>
-<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  
-  <button 
-    onclick="window.botpressWebChat.sendEvent({ type: 'show' })" 
-    style="font-size: 20px; padding: 10px 20px; border-radius: 10px; background-color: #4f46e5; color: white; border: none;">
-    💬 Launch Chat
-  </button>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-  <!-- Botpress Webchat Embed -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    #launch-btn {
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #chat-frame {
+      display: none;
+      width: 100%;
+      height: 90vh;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="launch-btn">💬 Launch Chat</button>
+
+  <iframe
+    id="chat-frame"
+    src=""
+    allow="microphone; camera"
+  ></iframe>
+
   <script>
-    window.botpressWebChat.init({
-      botId: "19f1ce34-0d14-4fe4-8a45-e183d62eb48c",
-      clientId: "19f1ce34-0d14-4fe4-8a45-e183d62eb48c",
-      hostUrl: "https://cdn.botpress.cloud/webchat/v3",
-      messagingUrl: "https://messaging.botpress.cloud",
-      lazyLoad: true,
-      showPoweredBy: false,
-      theme: "prism",
-      themeColor: "#4f46e5"
+    const button = document.getElementById("launch-btn");
+    const iframe = document.getElementById("chat-frame");
+
+    const botUrl = "https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/15/15/20250715155242-2GB61L2M.json";
+
+    button.addEventListener("click", () => {
+      iframe.src = botUrl;
+      iframe.style.display = "block";
+      button.style.display = "none";
     });
   </script>
+
 </body>
 </html>
 
+    
