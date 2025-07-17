@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Neuronest AI Bot</title>
-    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/07/15/15/20250715155242-9XK7618R.js"></script>
-  </head>
-  <body>
-    <h1>Neuronest AI Loan & Insurance Bot</h1>
-    <p>Our smart bot is ready to assist you. 🧠💼</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neuronest AI Chatbot</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  
+  <button 
+    onclick="window.botpressWebChat.sendEvent({ type: 'show' })" 
+    style="font-size: 20px; padding: 10px 20px; border-radius: 10px; background-color: #4f46e5; color: white; border: none;">
+    💬 Launch Chat
+  </button>
+
+  <!-- Botpress Webchat Embed -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <script>
+    window.botpressWebChat.init({
+      botId: "19f1ce34-0d14-4fe4-8a45-e183d62eb48c",
+      clientId: "19f1ce34-0d14-4fe4-8a45-e183d62eb48c",
+      hostUrl: "https://cdn.botpress.cloud/webchat/v3",
+      messagingUrl: "https://messaging.botpress.cloud",
+      lazyLoad: true,
+      showPoweredBy: false,
+      theme: "prism",
+      themeColor: "#4f46e5"
+    });
+  </script>
+</body>
 </html>
+
