@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Neuronest AI Bot</title>
+  <title> Test AI Bot</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,13 +13,23 @@
     }
 
     .launch-btn {
-      background-color: linear-gradient(to right, blue , lightblue);
-      color: white;
-      font-size: 18px;
-      padding: 15px 30px;
       border: none;
-      border-radius: 8px;
+      outline: none;
+      padding: 10px 20px;
+      /* background-color: tomato; */
+      background: linear-gradient(to right, lightblue, #5757ee);
+      border-radius: 10px;
+      color: white;
+      font-size: 20px;
       cursor: pointer;
+      box-shadow: 0 8px 10px gray;
+
+
+      &:hover {
+        transition: 0.9s ease;
+        transform: scale(1.01);
+        background: linear-gradient(to right, #5757ee, lightblue);
+      }
     }
 
     .chat-frame {
@@ -29,7 +40,7 @@
       width: 370px;
       height: 550px;
       border: none;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       z-index: 9999;
     }
 
@@ -51,6 +62,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>Get Instant Help with <br> Loans & Insurance</h1>
@@ -81,6 +93,5 @@
   </script>
 
 </body>
-</html>
 
-  
+</html>
