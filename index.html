@@ -1,72 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title> Test AI Bot</title>
+  <title>Neuronest AI Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
       text-align: center;
-      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      line-height: 1.6;
     }
 
     .launch-btn {
-      border: none;
-      outline: none;
-      padding: 10px 20px;
-      /* background-color: tomato; */
-      background: linear-gradient(to right, lightblue, #5757ee);
-      border-radius: 10px;
+      background-color: #00c6ff;
+      background-image: linear-gradient(90deg, #0072ff, #00c6ff);
       color: white;
-      font-size: 20px;
+      font-size: 18px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 8px 10px gray;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,198,255,0.3);
+    }
 
-
-      &:hover {
-        transition: 0.9s ease;
-        transform: scale(1.01);
-        background: linear-gradient(to right, #5757ee, lightblue);
-      }
+    .launch-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,198,255,0.6);
     }
 
     .chat-frame {
       display: none;
       position: fixed;
-      bottom: 80px;
-      right: 20px;
+      bottom: 100px;
+      right: 30px;
       width: 370px;
       height: 550px;
       border: none;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       z-index: 9999;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     .close-btn {
       position: fixed;
-      bottom: 640px;
-      right: 20px;
-      background: red;
+      bottom: 670px;
+      right: 30px;
+      background: #ff4e50;
       color: white;
       border: none;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      font-size: 18px;
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
       display: none;
       z-index: 10000;
+      box-shadow: 0 0 15px rgba(255, 78, 80, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .chat-frame {
+        width: 95%;
+        height: 90%;
+        right: 2.5%;
+        bottom: 5%;
+      }
+
+      .close-btn {
+        bottom: auto;
+        top: 10px;
+        right: 10px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <h1>Get Instant Help with <br> Loans & Insurance</h1>
-  <p>Click below to chat with our AI Agent for free loan advice, Insurance options and quick eligibility checks.</p>
+  <h1>💬 Neuronest AI Assistant</h1>
+  <p>Get instant help with loans, insurance, and eligibility – right from our intelligent virtual agent.</p>
   <button class="launch-btn" onclick="openChat()">🚀 Launch Chat</button>
 
   <iframe id="botFrame" class="chat-frame" src=""></iframe>
@@ -93,5 +127,6 @@
   </script>
 
 </body>
-
 </html>
+
+   
