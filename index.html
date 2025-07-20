@@ -1,130 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Neuronest AI Bot</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+	<html lang="en">
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+	<head>
+		<meta charset="UTF-8">
+		<title> Loan & Insurance AI Bot</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background: #f4f4f4;
+				text-align: center;
+				padding-top: 100px;
+			}
 
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      max-width: 600px;
-      line-height: 1.6;
-    }
+			.launch-btn {
+				border: none;
+				outline: none;
+				padding: 10px 20px;
+				/* background-color: tomato; */
+				background: linear-gradient(to right, lightblue, #5757ee);
+				border-radius: 10px;
+				color: white;
+				font-size: 20px;
+				cursor: pointer;
+				box-shadow: 0 8px 10px gray;
 
-    .launch-btn {
-      background-color: #00c6ff;
-      background-image: linear-gradient(90deg, #0072ff, #00c6ff);
-      color: white;
-      font-size: 18px;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0,198,255,0.3);
-    }
 
-    .launch-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,198,255,0.6);
-    }
+				&:hover {
+					transition: 0.9s ease;
+					transform: scale(1.01);
+					background: linear-gradient(to right, #5757ee, lightblue);
+				}
+			}
 
-    .chat-frame {
-      display: none;
-      position: fixed;
-      bottom: 100px;
-      right: 30px;
-      width: 370px;
-      height: 550px;
-      border: none;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      z-index: 9999;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+			.chat-frame {
+				display: none;
+				position: fixed;
+				bottom: 80px;
+				right: 20px;
+				width: 370px;
+				height: 550px;
+				border: none;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+				z-index: 9999;
+			}
 
-    .close-btn {
-      position: fixed;
-      bottom: 670px;
-      right: 30px;
-      background: #ff4e50;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      display: none;
-      z-index: 10000;
-      box-shadow: 0 0 15px rgba(255, 78, 80, 0.6);
-    }
+			.close-btn {
+				position: fixed;
+				bottom: 640px;
+				right: 20px;
+				background: red;
+				color: white;
+				border: none;
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				font-size: 18px;
+				font-weight: bold;
+				cursor: pointer;
+				display: none;
+				z-index: 10000;
+			}
 
-    @media (max-width: 768px) {
-      .chat-frame {
-        width: 95%;
-        height: 90%;
-        right: 2.5%;
-        bottom: 5%;
-      }
+			div {
+				color: black;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 
-      .close-btn {
-        bottom: auto;
-        top: 10px;
-        right: 10px;
-      }
-    }
-  </style>
-</head>
-<body>
+			p {
+				font-size: 20px;
+			}
+		</style>
+	</head>
 
-  <h1> 😣STILL CONFUSED ? MEET OUR LOAN AND INSURANCE ASSITANT !</h1>
-  <p>Get instant help with loans, insurance, and eligibility – right from our intelligent virtual agent.</p>
-  <button class="launch-btn" onclick="openChat()">🚀 Start</button>
+	<body>
 
-  <iframe id="botFrame" class="chat-frame" src=""></iframe>
-  <button id="closeBtn" class="close-btn" onclick="closeChat()">×</button>
+		<div>
+			<h1> 💡STILL CONFUSED ? MEET OUR LOAN AND INSURANCE ASSISTANT !!</h1>
+			<p>Click below to chat with our AI Agent for free loan advice, Insurance options and quick eligibility
+				checks.
+			</p>
+		</div>
+		<button class="launch-btn" onclick="openChat()">🚀Start</button>
 
-  <script>
-    const botURL = "https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/15/15/20250715155242-2GB61L2M.json";
+		<iframe id="botFrame" class="chat-frame" src=""></iframe>
+		<button id="closeBtn" class="close-btn" onclick="closeChat()">×</button>
 
-    function openChat() {
-      const frame = document.getElementById('botFrame');
-      const closeBtn = document.getElementById('closeBtn');
-      frame.src = botURL;
-      frame.style.display = 'block';
-      closeBtn.style.display = 'block';
-    }
+		<script>
+			const botURL = "https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/15/15/20250715155242-2GB61L2M.json";
 
-    function closeChat() {
-      const frame = document.getElementById('botFrame');
-      const closeBtn = document.getElementById('closeBtn');
-      frame.style.display = 'none';
-      frame.src = "";  // Stop the bot
-      closeBtn.style.display = 'none';
-    }
-  </script>
+			function openChat() {
+				const frame = document.getElementById('botFrame');
+				const closeBtn = document.getElementById('closeBtn');
+				frame.src = botURL;
+				frame.style.display = 'block';
+				closeBtn.style.display = 'block';
+			}
 
-</body>
-</html>
+			function closeChat() {
+				const frame = document.getElementById('botFrame');
+				const closeBtn = document.getElementById('closeBtn');
+				frame.style.display = 'none';
+				frame.src = "";  // Stop the bot
+				closeBtn.style.display = 'none';
+			}
+		</script>
+
+
+	</body>
+
+	</html>
